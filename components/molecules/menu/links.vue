@@ -89,7 +89,7 @@
 </template>
 
 <script>
-import Submenu from './Submenu'
+import Submenu from '@/components/molecules/menu/submenu'
 
 export default {
   components: {
