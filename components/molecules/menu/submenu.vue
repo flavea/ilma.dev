@@ -16,8 +16,8 @@
         <slot />
         <nuxt-link
           v-for="(cat, idx) in links"
-          :key="cat.Slug"
-          :to="`/${path}/${cat.Slug}`"
+          :key="cat.CompleteSlug"
+          :to="cat.CompleteSlug"
         >
           <b v-if="idx < 10">00{{ idx + addition }}.</b>
           <b v-else>0{{ idx + addition }}.</b> {{ cat.Name }}

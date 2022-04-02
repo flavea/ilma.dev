@@ -4,7 +4,7 @@
       <nuxt-link
         v-for="cat in categories"
         :key="cat.id"
-        :to="cat.Slug"
+        :to="cat.CompleteSlug || cat.Slug"
         :class="{
           'button-inverse': currentCat.Slug && cat.Slug === currentCat.Slug,
         }"

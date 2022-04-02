@@ -3,7 +3,7 @@
     <Decor />
     <AisConfigure
       :hits-per-page.camel="hitsPerPage"
-      :filters="`Categories.Name:'${currentCat.Name}'`"
+      :filters="`${filter} AND Categories.Name:'${currentCat.Name}'`"
       :page="page - 1"
     />
     <ListingLayout>
@@ -58,11 +58,16 @@ export default {
   },
   transition: 'default',
   asyncData({ app, store, route, params, redirect }) {
+    const lang = app.$cookies.get('lang') || 'en'
     const category = store.state.global.postCategories.find(
       (cat) => cat.Slug === params.slug
     )
 
     const newParams = qs.parse(route.fullPath.replace(/^.*\?/, ''))
+    let filter = ''
+
+    if (lang === 'en') filter = 'locale:' + lang
+    else filter = 'locale:' + lang
 
     if (!category) redirect('/404')
     else {
@@ -71,6 +76,7 @@ export default {
         query: newParams.query || '',
         page: newParams.page || 1,
         hitsPerPage: 12,
+        filter,
       }
     }
   },

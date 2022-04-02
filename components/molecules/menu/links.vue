@@ -18,17 +18,18 @@
         class="w-10 h-10 object-cover mt-4 mb-2 ml-3 lg:hidden"
       />
 
-      <nuxt-link to="/" class="menu"
-        >{{ lang === 'en' ? 'home' : 'beranda' }}.</nuxt-link
-      >
+      <nuxt-link to="/" class="menu">
+        {{ lang === 'en' ? 'home' : 'beranda' }}.
+      </nuxt-link>
 
       <nuxt-link
         v-for="p in pages.filter((p) => !p.Hide)"
         :key="p.Slug"
         :to="`/${p.Slug}`"
         class="menu block lg:inline-block"
-        >{{ p.Title }}.</nuxt-link
       >
+        {{ p.Title }}.
+      </nuxt-link>
 
       <Submenu
         label="blog"
@@ -57,9 +58,9 @@
         :current="open"
         path="resources"
       >
-        <nuxt-link to="/store"
-          ><b>001.</b> {{ lang === 'en' ? 'store' : 'toko' }}</nuxt-link
-        >
+        <nuxt-link to="/store">
+          <b>001.</b> {{ lang === 'en' ? 'store' : 'toko' }}
+        </nuxt-link>
       </Submenu>
 
       <nuxt-link to="/commission" class="menu block lg:inline-block">

@@ -49,10 +49,25 @@ export const actions = {
       useCache: true,
     })
 
+    const mappedCodeCategories = codeCategories.data.map((cat) => ({
+      ...cat,
+      CompleteSlug: `/codes/${cat.Slug}`,
+    }))
+
+    const mappedPostCategories = postCategories.data.map((cat) => ({
+      ...cat,
+      CompleteSlug: `/blog/${cat.Slug}`,
+    }))
+
+    const mappedResourcesCategories = resourceCategories.data.map((cat) => ({
+      ...cat,
+      CompleteSlug: `/resources/${cat.Slug}`,
+    }))
+
     commit('setData', baseInfo.data)
-    commit('setCodeCategories', codeCategories.data)
-    commit('setPostCategories', postCategories.data)
-    commit('setResourceCategories', resourceCategories.data)
+    commit('setCodeCategories', mappedCodeCategories)
+    commit('setPostCategories', mappedPostCategories)
+    commit('setResourceCategories', mappedResourcesCategories)
     commit('setLinks', links.data)
     commit('setPages', pages.data)
   },

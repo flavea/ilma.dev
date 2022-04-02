@@ -1,13 +1,8 @@
 <template>
-  <div>
-    <div
-      v-if="finalItems.length > 0"
-      class="button cursor-default filter-header"
-    >
-      Filter by Language
-    </div>
+  <div v-if="finalItems.length > 1">
+    <div class="button cursor-default filter-header">Filter by Language</div>
     <span v-if="isFromSearch && !finalItems.length">No results.</span>
-    <div v-if="finalItems.length > 0">
+    <div>
       <a
         v-for="item in finalItems"
         :key="item.value"

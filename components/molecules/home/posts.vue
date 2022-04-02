@@ -26,7 +26,7 @@
           <span>{{ getNumber(idx) }}</span>
         </div>
         <div>
-          <h2 class="font-black mt-0 text-base lg:text-5xl">
+          <h2 class="font-black mt-0 text-base lg:text-3xl">
             {{ post.Title }}
           </h2>
           <span class="text-gray text-sm lg:text-base">

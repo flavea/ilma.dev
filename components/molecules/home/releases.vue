@@ -54,7 +54,7 @@
             <nuxt-link
               v-for="cat in code.Categories"
               :key="cat.id"
-              :to="'/codes/' + cat.Slug"
+              :to="`/codes/${cat.Slug}`"
               class="bg-blue text-pink p-1 mb-1 text-xs ml-1 rounded-sm"
             >
               {{ cat.Name }}

@@ -3,7 +3,7 @@
     <Decor />
     <AisConfigure
       :hits-per-page.camel="hitsPerPage"
-      :filters="`Categories.Name:'${currentCat.Name}'`"
+      :filters="`${filter} AND Categories.Name:'${currentCat.Name}'`"
       :page="page - 1"
     />
     <ListingLayout>
@@ -70,7 +70,7 @@ export default {
     let filter = ''
 
     if (lang === 'en') filter = 'locale:' + lang
-    else filter = 'localizations.locale:' + lang
+    else filter = 'locale:' + lang
 
     if (!category) redirect('/404')
     else {

@@ -37,7 +37,7 @@
       <nuxt-link
         v-for="category in item.Categories"
         :key="category.Slug"
-        :to="`/blog/${category.Slug}`"
+        :to="category.Slug"
         class="bg-yellow text-pink py-2 px-4 mr-2 mt-2 inline-block font-bold text-sm rounded-full lowercase"
       >
         {{ category.Name }}

@@ -1,7 +1,11 @@
 <template>
   <AisInstantSearchSsr>
     <Decor />
-    <AisConfigure :hits-per-page.camel="hitsPerPage" :page="page - 1" />
+    <AisConfigure
+      :filters="filter"
+      :hits-per-page.camel="hitsPerPage"
+      :page="page - 1"
+    />
     <ListingLayout>
       <ListingSidebar path="codes" :categories="categories" />
       <ListingContent>
@@ -59,7 +63,7 @@ export default {
     let filter = ''
 
     if (lang === 'en') filter = 'locale:' + lang
-    else filter = 'localizations.locale:' + lang
+    else filter = 'locale:' + lang
 
     return {
       query: newParams.query || '',
