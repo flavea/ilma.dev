@@ -1,7 +1,7 @@
 <template>
   <div id="category-summary" class="p-4 pb-0 lg:p-10 lg:z-10">
     <div class="relative">
-      <PageTitle :path="currentCat.Name || 'Blog'" />
+      <PageTitle :path="currentCat.Name || path || ''" />
       <AisSearchBox>
         <div slot-scope="{ currentRefinement, refine }">
           <SearchBox :current-refinement="currentRefinement" :refine="refine" />
