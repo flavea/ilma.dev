@@ -1,7 +1,7 @@
 <template>
   <div
     id="summary"
-    class="p-0 bg-pink h-full relative md:p-8 lg:p-24 md:bg-blue"
+    class="p-0 bg-transparent h-full relative md:p-8 lg:p-24 lg:bg-purple"
   >
     <Circles
       :amount="132"
@@ -47,6 +47,17 @@ export default {
 
 <style lang="scss">
 #summary {
+  
+    background-image: url('/wave-2.svg');
+    background-position: bottom;
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+
+  @screen lg {
+    background-image: url('/wave.svg'), url('/wave-2.svg');
+    background-position: top, bottom;
+  }
+
   .circles {
     left: 10%;
   }

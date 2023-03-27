@@ -19,16 +19,16 @@
       />
 
       <Lines
-        class="absolute left-0 mt-8 ml-8 z-10 hidden lg:block"
+        class="absolute left-0 mt-8 ml-8 z-0 hidden lg:block"
         :amount="30"
       />
 
       <div id="inner-message" class="p-8 pt-0 relative">
         <h1
-          class="greeting text-pink md:text-yellow relative font-black text-6xl lg:text-8xl mb-3"
+          class="greeting text-pink relative font-black text-6xl lg:text-8xl mb-3"
         >
           {{ baseInfo.Heading }}
-          <span class="absolute text-yellow md:text-blue">
+          <span class="absolute text-yellow ">
             {{ baseInfo.Heading }}
           </span>
         </h1>
@@ -70,11 +70,11 @@ export default {
   margin-bottom: -53px;
 
   @screen md {
-    background: url('https://res.cloudinary.com/ilma/image/upload/v1593803407/wfh_8_t1klil.svg')
-      no-repeat center bottom;
+    background-image: url('/wfh.svg');
     margin-bottom: 0;
+    background-repeat: no-repeat;
     background-position: right bottom;
-    background-size: 55% auto;
+    background-size: auto 100%;
   }
 
   @screen lg {
@@ -133,45 +133,25 @@ export default {
       background-size: 100% 80% !important;
       background-repeat: no-repeat;
 
-      &::before {
-        @apply rounded-full block absolute h-64 z-10 w-screen;
-        background: linear-gradient(
-            180deg,
-            var(--pink) 0%,
-            rgba(255, 255, 255, 0) 100%
-          ),
-          linear-gradient(180deg, var(--yellow) 0%, rgba(255, 255, 255, 0) 100%),
-          var(--blue);
-        content: '';
-        z-index: 1;
-        top: -40%;
-        left: -10vw;
-        width: 120vw;
-
-        @screen md {
-          display: none !important;
-        }
-      }
-
       .greeting {
         @apply leading-none;
         margin-top: -3vh;
         z-index: 2;
         -webkit-text-stroke-width: 1px;
-        -webkit-text-stroke-color: var(--blue);
+        -webkit-text-stroke-color: var(--purple);
         span {
           top: 5px;
           left: 5px;
           z-index: 2;
-          -webkit-text-stroke-width: 0px;
+          -webkit-text-stroke-color: var(--purple);
         }
 
         @screen md {
-          -webkit-text-stroke-color: var(--yellow);
+          -webkit-text-stroke-color: var(--purple);
         }
 
         @screen lg {
-          -webkit-text-stroke-color: var(--blue);
+          -webkit-text-stroke-color: var(--purple);
         }
       }
 
@@ -181,14 +161,14 @@ export default {
       }
 
       p {
-        @apply relative bg-yellow inline p-1;
+        @apply relative bg-purple text-yellow inline p-1;
         z-index: 2;
         line-height: 2rem;
       }
 
       & > div {
         a {
-          @apply bg-blue text-yellow px-2;
+          @apply bg-purple text-yellow px-2;
         }
       }
     }

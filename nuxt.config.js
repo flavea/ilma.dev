@@ -127,7 +127,7 @@ export default {
       },
       {
         name: 'theme-color',
-        content: '#1FD7FF',
+        content: '#666396',
       },
       {
         name: 'google-site-verification',
@@ -159,7 +159,7 @@ export default {
    ** Customize the progress-bar color
    */
   loading: {
-    color: '#1FD7FF',
+    color: '#666396',
   },
   /*
    ** Global CSS

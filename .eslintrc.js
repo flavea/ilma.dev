@@ -25,6 +25,7 @@ module.exports = {
     'vue/multi-word-component-names': 'off',
     'vue/no-mutating-props': 'off',
     'vue/no-v-html': 'off',
+    'prettier/prettier': 'off',
   },
   globals: {
     $nuxt: true,

@@ -33,7 +33,7 @@
         v-for="category in Code.Categories"
         :key="category._id"
         :to="`/codes/${category.Slug}`"
-        class="bg-blue text-pink py-2 px-4 mr-2 mt-2 inline-block font-bold text-sm rounded-full lowercase"
+        class="bg-yellow text-purple py-2 px-4 mr-2 mt-2 inline-block font-bold text-sm rounded-full lowercase"
       >
         {{ category.Name }}
       </nuxt-link>
@@ -49,10 +49,10 @@
     <div
       v-if="showToC"
       id="toc"
-      class="my-4 p-4 text-sm bg-white border-pink border-1 overflow-y-auto overflow-x-hidden rounded-lg"
+      class="my-4 p-4 text-sm bg-white border-purple border-1 overflow-y-auto overflow-x-hidden rounded-lg"
     >
       <div
-        class="category-title mb-4 text-pink border-b-1 border-solid border-pink font-bold"
+        class="category-title mb-4 text-purple border-b-1 border-solid border-purple font-bold"
       >
         Content List
       </div>
@@ -73,7 +73,7 @@
         v-for="category in Code.Categories"
         :key="category._id"
         :to="`/codes/${category.Slug}`"
-        class="bg-blue text-pink py-2 px-4 mr-2 mt-2 inline-block font-bold text-sm rounded-full lowercase"
+        class="bg-yellow text-purple py-2 px-4 mr-2 mt-2 inline-block font-bold text-sm rounded-full lowercase"
       >
         {{ category.Name }}
       </nuxt-link>

@@ -1,10 +1,10 @@
 <template>
   <div
     id="latest-posts"
-    class="p-4 pt-0 bg-pink md:bg-transparent md:p-0 md:mt-4"
+    class="p-4 pt-0 md:p-0 md:mt-4"
   >
     <div class="title font-black py-4">
-      <span class="bg-yellow text-pink p-4 rounded-tr-lg rounded-tl-lg">
+      <span class="bg-yellow text-purple p-4 rounded-tr-lg rounded-tl-lg">
         {{ titles[lang] }}
       </span>
     </div>
@@ -20,13 +20,13 @@
         class="clearfix mb-2 flex items-center"
       >
         <div
-          class="number text-pink mr-2 lg:mr-4 text-3xl lg:text-4xl font-black italic bg-yellow rounded-full px-1 w-auto h-auto text-center flex items-center transform -rotate-12"
+          class="number text-purple mr-2 lg:mr-4 text-3xl lg:text-4xl font-black italic bg-yellow rounded-full px-1 w-auto h-auto text-center flex items-center transform -rotate-12"
           style="word-break: normal; overflow-wrap: normal"
         >
           <span>{{ getNumber(idx) }}</span>
         </div>
         <div>
-          <h2 class="font-black mt-0 text-base lg:text-3xl">
+          <h2 class="font-black mt-0 text-purple lg:text-3xl">
             {{ post.Title }}
           </h2>
           <span class="text-gray text-sm lg:text-base">

@@ -1,7 +1,7 @@
 <template>
-  <div class="textarea border-pink border-1 border-solid p-2 block mb-2">
+  <div class="textarea border-purple border-1 border-solid p-2 block mb-2">
     <label
-      class="block border-b-1 border-pink border-solid text-pink font-bold mb-2 pb-2"
+      class="block border-b-1 border-purple border-solid text-purple font-bold mb-2 pb-2"
     >
       {{ label }}
     </label>

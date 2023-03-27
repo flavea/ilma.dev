@@ -31,7 +31,7 @@
     </TextareaField>
 
     <div class="text-right">
-      <input class="button" type="submit" @click="submit" />
+      <input class="button" type="submit" value="Send" @click="submit" />
     </div>
   </form>
 </template>
