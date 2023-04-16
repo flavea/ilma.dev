@@ -26,7 +26,7 @@ export default {
 <style lang="scss">
 .squares {
   .s {
-    @apply border-purple border-solid border-1 inline-block mr-2 w-3 h-3 rounded-full transform rotate-45;
+    @apply border-purple border-solid border-1 inline-block mr-2 w-3 h-3 transform rotate-45;
   }
 
   &.squares-pink {

@@ -38,7 +38,7 @@ export default {
       songs: [],
       texts: {
         spotify: {
-          en: 'Last Played on Spotify:',
+          en: 'Last Played:',
           'id-ID': 'Terakhir dimainkan:',
         },
       },

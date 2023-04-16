@@ -1,16 +1,15 @@
 <template>
   <div
     id="latest-posts"
-    class="p-4 pt-0 md:p-0 md:mt-4"
+    class="md:mt-3 px-4 md:px-8 bg-pink lg:bg-transparent pt-10 md:pt-32 lg:pt-0"
   >
-    <div class="title font-black py-4">
-      <span class="bg-yellow text-purple p-4 rounded-tr-lg rounded-tl-lg">
+    <div class="title font-black py-4 mb-4">
+      <span class=" text-purple pb-2 border-b-1 border-purple rounded-tr-lg rounded-tl-lg text-2xl">
         {{ titles[lang] }}
       </span>
     </div>
     <div
       id="posts"
-      class="bg-white p-6 rounded-tr-lg rounded-br-lg rounded-bl-lg"
     >
       <nuxt-link
         v-for="(post, idx) in posts"
@@ -20,13 +19,13 @@
         class="clearfix mb-2 flex items-center"
       >
         <div
-          class="number text-purple mr-2 lg:mr-4 text-3xl lg:text-4xl font-black italic bg-yellow rounded-full px-1 w-auto h-auto text-center flex items-center transform -rotate-12"
+          class="number text-purple mr-2 lg:mr-4 text-3xl lg:text-4xl font-black italic bg-yellow rounded-full px-2 py-1 w-auto h-auto text-center flex items-center transform -rotate-12"
           style="word-break: normal; overflow-wrap: normal"
         >
           <span>{{ getNumber(idx) }}</span>
         </div>
         <div>
-          <h2 class="font-black mt-0 text-purple lg:text-3xl">
+          <h2 class="font-black mt-0 text-purple text-xl lg:text-3xl">
             {{ post.Title }}
           </h2>
           <span class="text-gray text-sm lg:text-base">
@@ -78,6 +77,16 @@ export default {
 
 <style lang="scss">
 #latest-posts {
+    background-image: url('/wave-4.svg');
+    background-size: 100% auto;
+    background-position: top;
+    background-repeat: no-repeat;
+
+    @screen lg {
+      
+    background-image: none;
+    }
+
   #posts {
     height: calc(100% - 56px);
     .date {

@@ -1,5 +1,5 @@
 <template>
-  <div id="releases" class="m-4 md:m-0 lg:mr-8 lg:mb-8">
+  <div id="releases" class="md:m-0 lg:mr-8 lg:mb-8">
     
     <div class="title font-black">
       <span class="bg-yellow text-purple p-4 rounded-tr-lg rounded-tl-lg">
@@ -7,7 +7,7 @@
       </span>
     </div>
 
-    <div id="releases-content" class="mt-4 flex justify-center items-center">
+    <div id="releases-content" class="mt-3">
       <div
         v-for="(code, index) in codes"
         :key="code.id"
@@ -15,14 +15,14 @@
           'rounded-tr-lg rounded-b-lg': index === 0,
           'rounded-lg': index > 0,
         }"
-        class="release clearfix p-2 bg-white  w-full font-black md:mr-4"
+        class="release clearfix p-2 bg-white  w-full font-black md:mr-4 mb-8"
       >
         <nuxt-link :to="'code/' + code.Slug">
           <img
             v-if="code.ImageLink"
             :src="code.ImageLink"
             :alt="`Image preview for ${code.Name}`"
-            class="mb-2 object-cover w-full h-48 rounded-lg"
+            class="mb-2 object-cover w-full h-48 md:h-auto rounded-lg"
           />
 
           <img
@@ -30,11 +30,11 @@
             :src="
               code.Images[0].replace(
                 'upload/',
-                'upload/q_auto,f_auto,w_475,c_scale,dpr_auto/'
+                'upload/q_auto,f_auto,w_800,c_scale,dpr_auto/'
               )
             "
             :alt="`Image preview for ${code.Name}`"
-            class="mb-2 object-cover w-full h-48 rounded-lg"
+            class="mb-2 object-cover w-full h-48 md:h-auto rounded-lg"
           />
           <img
             v-else
