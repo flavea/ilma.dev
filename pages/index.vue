@@ -21,7 +21,7 @@ export default {
     const codeIndex = searchClient.initIndex('staging_codes')
 
     const latestPosts = await postIndex
-      .search('', { hitsPerPage: 10, facetFilters: ['locale:' + lang] })
+      .search('', { hitsPerPage: 3, facetFilters: ['locale:' + lang] })
       .then(({ hits }) => {
         return hits
       })
