@@ -3,7 +3,7 @@
     <Welcome :codes="latestCodes" :posts="latestPosts" />
     <div
       id="wave"
-      class="h-32 md:h-64 bg-pink lg:bg-purple"
+      class="h-40 md:h-64 bg-pink lg:bg-purple"
     />
   </div>
 </template>
