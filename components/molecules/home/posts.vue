@@ -1,7 +1,7 @@
 <template>
   <div
     id="latest-posts"
-    class="md:mt-3 px-4 md:px-8 lg:px-12 bg-pink lg:bg-transparent pt-16 md:pt-32 lg:pt-0"
+    class="md:mt-3 px-4 md:px-8 bg-pink lg:bg-transparent pt-10 md:pt-32 lg:pt-0"
   >
     <div class="title font-black py-4 mb-4">
       <span class=" text-purple pb-2 border-b-1 border-purple rounded-tr-lg rounded-tl-lg text-2xl">
@@ -16,7 +16,7 @@
         :key="post.id"
         :to="'/post/' + post.Slug"
         :target="post.Link ? '_blank' : '_self'"
-        class="clearfix pb-2 flex items-center"
+        class="clearfix mb-2 flex items-center"
       >
         <div
           class="number text-purple mr-2 lg:mr-4 text-3xl lg:text-4xl font-black italic bg-yellow rounded-full px-2 py-1 w-auto h-auto text-center flex items-center transform -rotate-12"

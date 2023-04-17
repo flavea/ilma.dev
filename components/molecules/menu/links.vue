@@ -52,6 +52,18 @@
         path="codes"
       />
 
+      <Submenu
+        :label="lang === 'en' ? 'designs' : 'desain'"
+        :links="resourceCategories"
+        :on-click="openBlock"
+        :current="open"
+        path="resources"
+      >
+        <nuxt-link to="/store">
+          <b>001.</b> {{ lang === 'en' ? 'store' : 'toko' }}
+        </nuxt-link>
+      </Submenu>
+
       <nuxt-link to="/commission" class="menu block lg:inline-block">
         {{ lang === 'en' ? 'hire me' : 'jasa saya' }}.
       </nuxt-link>

@@ -16,10 +16,10 @@
         />
         <Squares
           class="w-64 absolute hidden lg:block z-0 rotate-45"
-          :amount="132"
-          color="pink"
+      :amount="132"
+      color="pink"
           style="top: 20%; left: 20%"
-        />
+    />
         <Lines :amount="30" class="absolute z-0 hidden lg:block" color="pink" />
       </div>
     </div>
@@ -41,7 +41,7 @@
           class="hidden xxl:block w-1/2 xlg:w-1/3 m-5 text-xs mb-5"
         />
 
-        <div id="inner-message" class="p-4 md:p-8 pt-0 relative mt-10 md:pb-0">
+        <div id="inner-message" class="p-4 md:p-8 pt-0 relative mt-10">
           <Lines
             class="absolute left-0 mt-8 ml-8 z-0 hidden lg:block"
             :amount="30"
@@ -102,29 +102,31 @@ export default {
 
 <style lang="scss">
 #welcome {
-  #illust {
-    order: 2;
+  margin-bottom: -53px;
 
-    @screen lg {
-      order: 1;
-    }
+#illust {
+  order: 2;
 
-    #image {
-      @screen md {
-        background-image: url('/wfh.svg');
-        margin-bottom: 0;
-        background-repeat: no-repeat;
-        background-position: right bottom;
-        background-size: auto 100%;
-      }
+  #image {
 
-      @screen lg {
-        background-size: 100% auto;
-        background-position: left bottom;
-      }
-    }
+  @screen md {
+    background-image: url('/wfh.svg');
+    margin-bottom: 0;
+    background-repeat: no-repeat;
+    background-position: right bottom;
+    background-size: auto 100%;
   }
 
+  @screen lg {
+    background-size: 100% auto;
+    background-position: left bottom;
+  }
+  }
+
+  @screen lg {
+    order: 1;
+  }
+}
   .circles {
     left: 10%;
     top: 5%;
