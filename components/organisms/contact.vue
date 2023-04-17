@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="xl:flex">
-      <div class="xl:w-1/3 xl:mr-8 mb-4">
+      <div class="xl:w-1/3 xl:mr-8 mb-4 p-4">
         <h2 class="text-purple font-black text-2xl mb-4">
           <span
             class="pb-2 border-purple border-solid border-b-1 inline-block"

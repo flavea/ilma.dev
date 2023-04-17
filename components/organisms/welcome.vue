@@ -1,94 +1,59 @@
 <template>
-  <div id="welcome" class="p-0 w-full lg:relative lg:min-h-screen grid grid-cols-1 lg:grid-cols-2 overflow-hidden">
-    <div id="illust">
-      <Circles class="w-64 absolute hidden lg:block" :amount="132" />
-      <div id="image" class="h-screen hidden lg:block" />
-      <Posts :posts="posts" />
-      <div
-        id="summary"
-        class="p-0 bg-transparent hidden lg:block h-full relative md:p-8 lg:p-24 lg:bg-purple w-screen"
-      >
-        <Circles
-          :amount="132"
-          class="w-64 absolute hidden lg:block z-0"
-          color="yellow"
-          style="top: 10%"
-        />
-        <Squares
-          class="w-64 absolute hidden lg:block z-0 rotate-45"
+  <div id="welcome" class="p-0 w-full lg:relative lg:h-screen">
+    <circles class="w-64 absolute hidden lg:block" :amount="132" />
+    <circles
+      class="circles-2 w-64 absolute hidden lg:block"
       :amount="132"
-      color="pink"
-          style="top: 20%; left: 20%"
+      color="blue"
     />
-        <Lines :amount="30" class="absolute z-0 hidden lg:block" color="pink" />
-      </div>
-    </div>
-    <div id="content">
-      <Github
-        class="absolute top-0 right-0 hidden lg:block w-1/6 m-5 text-xs"
+    <Github
+      class="absolute top-0 right-0 hidden lg:block w-1/6 m-5 text-xs text-right"
+    />
+
+    <div
+      id="message"
+      class="pt-14 lg:mt-0 text-pink lg:absolute md:w-3/5 lg:py-8 xl:w-1/2"
+    >
+      <Spotify
+        class="absolute top-0 left-0 -mt-40 -ml-20 hidden xxl:block w-1/2 xlg:w-1/3 m-5 text-xs"
       />
 
-      <Circles
-        class="circles-2 w-64 absolute hidden lg:block"
-        :amount="132"
-        color="blue"
+      <Lines
+        class="absolute left-0 mt-8 ml-8 z-0 hidden lg:block"
+        :amount="30"
       />
-      <div
-        id="message"
-        class="lg:mt-40 text-pink lg:py-8"
-      >
-        <Spotify
-          class="hidden xxl:block w-1/2 xlg:w-1/3 m-5 text-xs mb-5"
-        />
 
-        <div id="inner-message" class="p-4 md:p-8 pt-0 relative mt-10">
-          <Lines
-            class="absolute left-0 mt-8 ml-8 z-0 hidden lg:block"
-            :amount="30"
-          />
-          <h1
-            class="greeting text-pink relative font-black text-6xl lg:text-8xl mb-3"
-          >
+      <div id="inner-message" class="p-8 pt-0 relative">
+        <h1
+          class="greeting text-pink relative font-black text-6xl lg:text-8xl mb-3"
+        >
+          {{ baseInfo.Heading }}
+          <span class="absolute text-yellow ">
             {{ baseInfo.Heading }}
-            <span class="absolute text-yellow ">
-              {{ baseInfo.Heading }}
-            </span>
-          </h1>
+          </span>
+        </h1>
 
-          <div class="mb-10" v-html="$md.render(baseInfo.Description)" />
+        <div v-html="$md.render(baseInfo.Description)" />
 
-          <Releases :codes="codes" />
-        </div>
+        <nuxt-link
+          :to="lang === 'en' ? '/about' : '/tentang'"
+          class="button bg-yellow shadow-small-pink mt-4 inline-block"
+        >
+          {{ lang === 'en' ? 'read more' : 'baca lebih lanjut' }}
+        </nuxt-link>
       </div>
     </div>
   </div>
 </template>
 
 <script>
-import Squares from '@/components/atoms/squares.vue'
-import Circles from '@/components/atoms/circles.vue'
+import circles from '@/components/atoms/circles.vue'
 import Lines from '@/components/atoms/lines.vue'
 import Github from '@/components/molecules/github.vue'
 import Spotify from '@/components/molecules/spotify.vue'
-import Releases from '@/components/molecules/home/releases.vue'
-import Posts from '@/components/molecules/home/posts.vue'
 
 export default {
-  components: { Circles, Lines, Spotify, Github, Releases, Posts, Squares },
-  props: {
-    codes: {
-      type: Array,
-      default: () => {
-        return []
-      },
-    },
-    posts: {
-      type: Array,
-      default: () => {
-        return []
-      },
-    },
-  },
+  components: { circles, Lines, Spotify, Github },
   computed: {
     baseInfo() {
       return this.$store.state.global.baseInfo
@@ -104,11 +69,6 @@ export default {
 #welcome {
   margin-bottom: -53px;
 
-#illust {
-  order: 2;
-
-  #image {
-
   @screen md {
     background-image: url('/wfh.svg');
     margin-bottom: 0;
@@ -118,15 +78,31 @@ export default {
   }
 
   @screen lg {
-    background-size: 100% auto;
-    background-position: left bottom;
-  }
+    background-size: 55% auto;
+    background-position: -50px bottom;
+    height: calc(100vh - 3.4rem);
   }
 
-  @screen lg {
-    order: 1;
+  @screen xl {
+    background-size: 55% auto;
+    background-position: left bottom;
+    height: calc(100vh - 3.4rem);
   }
-}
+
+  &::after {
+    @apply block relative;
+    background: url('https://res.cloudinary.com/ilma/image/upload/v1593803407/wfh_8_t1klil.svg')
+      no-repeat center bottom;
+    background-size: auto 100%;
+    content: '';
+    height: 300px;
+    margin-top: -80px;
+    z-index: 1;
+
+    @screen md {
+      @apply hidden;
+    }
+  }
   .circles {
     left: 10%;
     top: 5%;
@@ -190,40 +166,12 @@ export default {
         line-height: 2rem;
       }
 
+      & > div {
+        a {
+          @apply bg-purple text-yellow px-2;
+        }
+      }
     }
-  }
-}
-
-#content {
-  order: 1;
-  @screen lg {
-    order: 2;
-  }
-}
-
-
-#summary {
-    background-image: url('/wave-2.svg');
-    background-position: bottom;
-    background-repeat: no-repeat;
-    background-size: 100% auto;
-
-  @screen lg {
-    background-image: url('/wave.svg'), url('/wave-2.svg');
-    background-position: top, bottom;
-  }
-
-  .circles {
-    left: 10%;
-  }
-
-  .lines {
-    bottom: -20px;
-    right: 5%;
-  }
-
-  .title {
-    margin-bottom: -2px;
   }
 }
 </style>

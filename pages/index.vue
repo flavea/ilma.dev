@@ -1,19 +1,17 @@
 <template>
   <div>
-    <Welcome :codes="latestCodes" :posts="latestPosts" />
-    <div
-      id="wave"
-      class="h-32 md:h-64 bg-pink lg:bg-purple"
-    />
+    <Welcome />
+    <Home :posts="latestPosts" :codes="latestCodes" />
   </div>
 </template>
 
 <script>
 import { searchClient } from '@/helpers/algolia'
 import Welcome from '@/components/organisms/welcome.vue'
+import Home from '@/components/organisms/home.vue'
 
 export default {
-  components: { Welcome },
+  components: { Welcome, Home },
   transition: 'default',
   async asyncData({ app }) {
     const lang = app.$cookies.get('lang') || 'en'
@@ -172,16 +170,6 @@ export default {
         font-size: 1.6rem;
       }
     }
-  }
-}
-
-#wave {
-  margin: 0;
-  background-image: url('/wave-2.svg');
-  background-size: cover;
-
-  @screen lg {
-    background-image: url('/wave-3.svg');
   }
 }
 </style>
