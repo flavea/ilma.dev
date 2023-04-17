@@ -29,7 +29,6 @@ export default {
     Contact,
     LangSwitcher,
   },
-  middleware: 'url-check',
   head() {
     let description = this.baseInfo.Description
 
