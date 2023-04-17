@@ -2,7 +2,7 @@
   <div
     class="circles"
     :class="{
-      'circles-blue': color === 'blue',
+      'circles-purple': color === 'blue',
       'circles-yellow': color === 'yellow',
     }"
   >
@@ -32,12 +32,12 @@ export default {
 <style lang="scss">
 .circles {
   .c {
-    @apply border-pink border-solid border-1 inline-block mr-2 w-3 h-3 rounded-full;
+    @apply border-yellow border-solid border-1 inline-block mr-2 w-3 h-3 rounded-full;
   }
 
-  &.circles-blue {
+  &.circles-purple {
     .c {
-      @apply border-blue;
+      @apply border-purple;
     }
   }
 

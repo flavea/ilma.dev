@@ -1,10 +1,10 @@
 <template>
   <div>
     <div class="xl:flex">
-      <div class="xl:w-1/3 xl:mr-8 mb-4 p-4">
-        <h2 class="text-pink md:text-blue font-black text-2xl mb-4">
+      <div class="xl:w-1/3 xl:mr-8 mb-4">
+        <h2 class="text-purple font-black text-2xl mb-4">
           <span
-            class="pb-2 border-pink md:border-blue border-solid border-b-1 inline-block"
+            class="pb-2 border-purple border-solid border-b-1 inline-block"
           >
             {{ lang === 'en' ? 'On The Web' : 'Media Sosial' }}
           </span>
@@ -17,7 +17,7 @@
             :alt="link.Name"
             rel="noreferrer"
             target="_blank"
-            class="flex bg-pink md:bg-blue text-yellow md:text-pink font-bold p-4 pl-8 text-left m-1 hover:bg-yellow"
+            class="flex bg-pink md:bg-purple text-purple md:text-yellow font-bold p-4 pl-8 text-left m-1 hover:bg-pink hover:text-purple"
             style="border-radius: 20px"
           >
             <div v-if="link.Icon" class="mr-2" v-html="link.Icon" />
@@ -25,9 +25,9 @@
           </a>
         </div>
       </div>
-      <div class="xl:w-2/3 bg-white p-4 rounded mb-4">
-        <h2 class="text-blue font-black text-2xl mb-4">
-          <span class="pb-2 border-blue border-solid border-b-1 inline-block">
+      <div class="xl:w-2/3 bg-white p-4 rounded mb-4 rounded-default border-1 border-purple">
+        <h2 class="text-purple font-black text-2xl mb-4">
+          <span class="pb-2 border-purple border-solid border-b-1 inline-block">
             Email
           </span>
         </h2>

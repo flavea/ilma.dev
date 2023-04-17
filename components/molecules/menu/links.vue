@@ -1,21 +1,22 @@
 <template>
   <div
     id="menu"
-    class="bg-pink h-13 fixed w-full top-0 left-0 z-30 lowercase text-xl lg:block"
+    class="bg-yellow h-13 fixed w-full top-0 left-0 z-30 lowercase text-xl lg:flex lg:justify-between border-b-1 border-purple"
   >
     <nuxt-link
-      class="hidden lg:inline-block site-name text-blue text-2xl pt-2 pl-5 pb-2 pr-5 relative z-30 bg-pink font-black"
+      class="hidden lg:inline-block site-name text-purple text-2xl pt-2 pl-5 pb-2 pr-5 relative z-30 bg-yellow font-black"
       to="/"
     >
       &lt; {{ lang === 'en' ? 'hello' : 'halo' }} /&gt;
     </nuxt-link>
 
     <div
-      class="menu-list float-right text-yellow lg:mr-13 relative z-30 bg-pink"
+      class="menu-list text-purple lg:mr-13 relative z-30 bg-yellow"
     >
       <img
         src="https://res.cloudinary.com/ilma/image/upload/w_40,h_40/v1593808530/assets/icon_cjac0o.png"
         class="w-10 h-10 object-cover mt-4 mb-2 ml-3 lg:hidden"
+        alt="Icon"
       />
 
       <nuxt-link to="/" class="menu">
@@ -50,18 +51,6 @@
         :current="open"
         path="codes"
       />
-
-      <Submenu
-        :label="lang === 'en' ? 'designs' : 'desain'"
-        :links="resourceCategories"
-        :on-click="openBlock"
-        :current="open"
-        path="resources"
-      >
-        <nuxt-link to="/store">
-          <b>001.</b> {{ lang === 'en' ? 'store' : 'toko' }}
-        </nuxt-link>
-      </Submenu>
 
       <nuxt-link to="/commission" class="menu block lg:inline-block">
         {{ lang === 'en' ? 'hire me' : 'jasa saya' }}.
@@ -146,7 +135,7 @@ export default {
   }
 
   &::before {
-    @apply absolute left-0 bg-blue z-30 hidden;
+    @apply absolute left-0 bg-purple z-30 hidden;
     content: '';
     width: calc(100% - 1.6rem);
     height: 1px;
@@ -158,7 +147,7 @@ export default {
   }
 
   .nuxt-link-active {
-    @apply block text-blue;
+    @apply block text-purple;
 
     @screen lg {
       @apply inline-block;
@@ -167,19 +156,19 @@ export default {
 
   .menu-list {
     .menu {
-      @apply p-3 font-bold cursor-pointer relative text-yellow;
+      @apply p-3 font-bold cursor-pointer relative text-purple;
       transition: 0.5s all;
 
       &:hover {
-        @apply bg-white text-pink;
+        @apply bg-purple text-yellow;
       }
 
       .menu-child {
-        @apply bg-white text-pink absolute right-0 mt-3 overflow-hidden;
+        @apply bg-white text-purple absolute right-0 mt-3 overflow-hidden;
         min-width: 300px;
 
         a {
-          @apply block p-2 text-pink font-light text-base;
+          @apply block p-2 text-purple font-light text-base hover:text-pink;
 
           b {
             @apply text-sm font-black;

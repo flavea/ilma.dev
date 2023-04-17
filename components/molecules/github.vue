@@ -1,6 +1,6 @@
 <template>
   <div v-if="githubData.repo">
-    <b class="text-pink border-pink border-b-1 mb-3">
+    <b class="text-purple border-purple border-b-1 mb-3">
       {{ texts.github[lang] }}
     </b>
     <ul class="mt-1 text-left">

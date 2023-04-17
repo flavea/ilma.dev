@@ -2,12 +2,13 @@
   <div>
     <div
       id="menu-mobile"
-      class="block lg:hidden fixed top-0 right-0 p-4 pt-5 pb-6 z-50 cursor-pointer rounded-bl-default"
+      class="lg:hidden fixed top-0 right-0  z-50 cursor-pointer rounded-bl-default flex items-center justify-center"
       :class="{ 'bg-yellow': !isOpen, 'bg-pink': isOpen }"
       @click="isOpen = !isOpen"
     >
+    <div>
       <div v-if="!isOpen" id="hamburger"></div>
-      <div v-if="isOpen" id="close" class="mr-5"></div>
+      <div v-if="isOpen" id="close" class="mr-5"></div></div>
     </div>
 
     <Socials />
@@ -41,19 +42,23 @@ export default {
 #menu-mobile {
   width: 60px;
   height: 60px;
+  > div {
+    width: 30px;
+    height: 30px;
+  }
 
   #hamburger {
-    margin-top: 10px;
+    margin-top: 50%;
     transition: transform 0.5s linear 0.5s, background 0.5s;
     width: 30px;
     height: 2px;
-    @apply bg-pink relative;
+    @apply bg-purple relative;
     transition-duration: 0.5s;
 
     &::before {
       width: 30px;
       height: 2px;
-      @apply bg-pink relative;
+      @apply bg-purple relative;
       transition-duration: 0.5s;
       content: '';
       position: absolute;
@@ -64,7 +69,7 @@ export default {
     &::after {
       width: 30px;
       height: 2px;
-      @apply bg-pink absolute right-0;
+      @apply bg-purple absolute right-0;
       transition-duration: 0.5s;
       content: '';
       bottom: -8px;
@@ -75,7 +80,7 @@ export default {
     @apply transform rotate-45;
 
     &::before {
-      @apply absolute bg-yellow transform rotate-90;
+      @apply absolute bg-purple transform rotate-90;
       transition-duration: 0.5s;
       content: '';
       top: -2px;
@@ -85,7 +90,7 @@ export default {
     }
 
     &::after {
-      @apply absolute bottom-0 right-0 bg-yellow transform;
+      @apply absolute bottom-0 right-0 bg-purple transform;
       transition-duration: 0.5s;
       content: '';
       width: 30px;

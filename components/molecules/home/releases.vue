@@ -1,14 +1,13 @@
 <template>
-  <div id="releases" class="m-4 md:m-0 lg:mr-8 lg:mb-8">
+  <div id="releases" class="md:m-0 lg:mr-8 lg:mb-8">
+    
     <div class="title font-black">
-      <span
-        class="bg-blue text-pink p-4 md:bg-yellow md:text-pink rounded-tr-lg rounded-tl-lg"
-      >
+      <span class="bg-yellow text-purple p-4 rounded-tr-lg rounded-tl-lg">
         {{ titles[lang] }}
       </span>
     </div>
 
-    <div id="releases-content" class="mt-4 flex justify-center items-center">
+    <div id="releases-content" class="mt-3">
       <div
         v-for="(code, index) in codes"
         :key="code.id"
@@ -16,14 +15,14 @@
           'rounded-tr-lg rounded-b-lg': index === 0,
           'rounded-lg': index > 0,
         }"
-        class="release clearfix p-2 border-blue md:border-yellow border-1 bg-white lg:bg-pink w-full font-black md:mr-4"
+        class="release clearfix p-2 bg-white  w-full font-black md:mr-4 mb-8"
       >
         <nuxt-link :to="'code/' + code.Slug">
           <img
             v-if="code.ImageLink"
             :src="code.ImageLink"
             :alt="`Image preview for ${code.Name}`"
-            class="mb-2 object-cover w-full h-48 rounded-lg"
+            class="mb-2 object-cover w-full h-48 md:h-auto rounded-lg"
           />
 
           <img
@@ -31,11 +30,11 @@
             :src="
               code.Images[0].replace(
                 'upload/',
-                'upload/q_auto,f_auto,w_475,c_scale,dpr_auto/'
+                'upload/q_auto,f_auto,w_800,c_scale,dpr_auto/'
               )
             "
             :alt="`Image preview for ${code.Name}`"
-            class="mb-2 object-cover w-full h-48 rounded-lg"
+            class="mb-2 object-cover w-full h-48 md:h-auto rounded-lg"
           />
           <img
             v-else
@@ -45,7 +44,7 @@
           />
         </nuxt-link>
         <div
-          class="p-1 text-pink lg:text-yellow flex items-center justify-between"
+          class="p-1 text-pink lg:text-purple flex items-center justify-between"
         >
           <span>
             {{ code.Name }}
@@ -55,7 +54,7 @@
               v-for="cat in code.Categories"
               :key="cat.id"
               :to="`/codes/${cat.Slug}`"
-              class="bg-blue text-pink p-1 mb-1 text-xs ml-1 rounded-sm"
+              class="bg-purple text-yellow p-1 mb-1 text-xs ml-1 rounded-sm"
             >
               {{ cat.Name }}
             </nuxt-link>
@@ -79,8 +78,8 @@ export default {
   data() {
     return {
       titles: {
-        en: 'Latest Releases',
-        'id-ID': 'Kode Terbaru',
+        en: 'Latest Projects',
+        'id-ID': 'Proyek Terbaru',
       },
     }
   },
