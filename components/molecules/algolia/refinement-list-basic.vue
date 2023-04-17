@@ -1,6 +1,6 @@
 <template>
   <div v-if="finalItems.length > 1">
-    <div class="font-bold mt-4 text-lg text-pink">Filter by Language</div>
+    <div class="button cursor-default filter-header">Filter by Language</div>
     <span v-if="isFromSearch && !finalItems.length">No results.</span>
     <div>
       <a
@@ -107,6 +107,6 @@ export default {
 
 <style lang="scss" scoped>
 .filter-header {
-  @apply bg-yellow text-purple block cursor-default;
+  @apply bg-yellow text-pink block cursor-default;
 }
 </style>

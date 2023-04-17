@@ -20,11 +20,11 @@
             class="greeting text-pink md:text-yellow relative font-black text-5xl mb-3"
           >
             Not found
-            <span class="absolute text-yellow md:text-purple"> Not found </span>
+            <span class="absolute text-yellow md:text-blue"> Not found </span>
           </h1>
           <p>Oops, the page you are looking for doesn't exist. Sorry!</p>
           <br />
-          <nuxt-link to="/" class="button bg-purple shadow-small-yellow block"
+          <nuxt-link to="/" class="button bg-blue shadow-small-yellow block"
             >go to home</nuxt-link
           >
         </div>
@@ -49,7 +49,7 @@
     left: auto;
     top: auto;
     .c {
-      @apply border-purple border-solid border-1 inline-block mr-2;
+      @apply border-blue border-solid border-1 inline-block mr-2;
     }
   }
 
@@ -104,7 +104,7 @@
     }
   }
   .greeting {
-    -webkit-text-stroke-color: var(--purple);
+    -webkit-text-stroke-color: var(--blue);
   }
   #summary {
     #inner-summ {

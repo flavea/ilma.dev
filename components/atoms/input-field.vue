@@ -1,5 +1,5 @@
 <template>
-  <div class="input border-purple border-1 border-solid p-2 block mb-2">
+  <div class="input border-pink border-1 border-solid p-2 block mb-2">
     <label>{{ label }}</label>
     <slot />
   </div>
@@ -21,7 +21,7 @@ export default {
 <style lang="scss">
 .input {
   & > label {
-    @apply block w-full font-bold border-r-0 border-b-1 mr-0 mb-2 pb-2 border-purple text-purple;
+    @apply block w-full font-bold border-r-0 border-b-1 mr-0 mb-2 pb-2 border-pink text-pink;
 
     @screen md {
       @apply inline-block w-1/4 border-r-1 mr-3 mb-0 pb-0 border-b-0;

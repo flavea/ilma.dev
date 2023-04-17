@@ -1,16 +1,16 @@
 <template>
-  <main class="font-sans bg-purple lg:bg-pink text-base">
+  <main class="font-sans bg-yellow text-base">
     <MenuList />
     <nuxt />
     <LangSwitcher />
     <div
       id="affiliates"
-      class="relative z-20 p-4 pb-20 bg-yellow md:p-16 text-purple"
+      class="relative z-20 bg-blue text-pink p-4 md:bg-pink md:p-16 md:text-blue"
     >
       <Contact />
-      <div class="text-purple lg:text-purple">
+      <div class="text-pink lg:text-yellow">
         © 2013–{{ year }} Copyright Ilma A.
-        <nuxt-link to="/credits" class="lg:text-purple">
+        <nuxt-link to="/credits" class="lg:text-blue">
           All rights reserved.
         </nuxt-link>
       </div>

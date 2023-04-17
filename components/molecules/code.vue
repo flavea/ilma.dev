@@ -1,10 +1,10 @@
 <template>
   <div
-    class="post xl:mb-4 overflow-hidden p-4 bg-white align-top relative rounded text-center border-1 border-solid border-purple rounded-default"
+    class="post xl:mb-4 overflow-hidden p-4 bg-white align-top relative rounded text-center"
   >
     <nuxt-link :to="'/code/' + item.Slug">
       <span
-        class="bg-purple text-white py-2 px-4 mr-2 mt-2 inline-block font-bold text-sm absolute top-1 left-0 rounded-r-full lowercase"
+        class="bg-pink text-white py-2 px-4 mr-2 mt-2 inline-block font-bold text-sm absolute top-1 left-0 rounded-r-full lowercase"
       >
         {{ year }}
       </span>

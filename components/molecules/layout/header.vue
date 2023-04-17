@@ -7,12 +7,12 @@
             'text-5xl': title.split(' ').length <= 1,
             'text-3xl': title.split(' ').length > 1,
           }"
-          class="text-yellow font-black m-0"
+          class="text-yellow lg:text-pink font-black m-0"
         >
           {{ title }}
         </h1>
       </div>
-      <div v-if="date" class="lowercase text-yellow font-medium">
+      <div v-if="date" class="lowercase text-yellow lg:text-pink font-medium">
         {{ date }}
       </div>
     </div>

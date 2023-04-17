@@ -1,12 +1,12 @@
 <template>
   <div class="block lg:inline-block">
     <div
-      class="menu hover:bg-white hover:text-purple"
-      :class="{ 'bg-white text-purple': current === label }"
+      class="menu hover:bg-white hover:text-pink"
+      :class="{ 'bg-white text-pink': current === label }"
     >
       <a
-        class="block text-purple h-full"
-        :class="{ 'text-purple': current !== label }"
+        class="block text-yellow h-full"
+        :class="{ 'text-yellow': current !== label }"
         title="click!"
         @click="onClick(label)"
       >

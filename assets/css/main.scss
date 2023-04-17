@@ -3,14 +3,14 @@ html,
 body {
   word-break: break-word;
   overflow-x: hidden;
-  --pink: #eaa1c2;
-  --purple: #666396;
-  --yellow: #f7f179;
+  --pink: #ff007a;
+  --blue: #1fd7ff;
+  --yellow: #fbff42;
 }
 
 ::-webkit-scrollbar-thumb:vertical,
 ::-webkit-scrollbar-thumb:horizontal {
-  @apply bg-purple border-solid border-pink border-2;
+  @apply bg-yellow border-solid border-pink border-4;
 }
 
 ::-webkit-scrollbar-thumb:vertical {
@@ -24,18 +24,18 @@ body {
 }
 
 ::-webkit-scrollbar {
-  @apply bg-yellow w-2;
+  @apply bg-pink w-2;
 }
 
 ::-webkit-scrollbar-track {
-  @apply bg-yellow;
+  @apply bg-pink;
 }
 
 a {
-  @apply text-purple;
+  @apply text-pink;
   &:hover,
   &:active {
-    @apply text-pink;
+    @apply text-blue;
   }
 }
 
@@ -45,7 +45,7 @@ h3,
 h4,
 h5,
 h6 {
-  @apply font-black  text-purple;
+  @apply font-black  text-pink;
 }
 
 h6 {
@@ -77,31 +77,24 @@ pre {
 }
 
 blockquote {
-  @apply pl-2 border-l-4 border-purple;
+  @apply pl-2 border-l-4 border-blue;
 }
 
 .button {
-  @apply bg-yellow border-purple shadow-small-purple text-purple border-1 pt-2 pb-2 pl-4 pr-4 text-center mt-4 mb-4 mr-4 inline-block italic cursor-pointer;
+  @apply bg-pink border-blue shadow-small-blue text-yellow border-1 pt-2 pb-2 pl-4 pr-4 text-center mt-4 mb-4 mr-4 inline-block italic cursor-pointer;
   font-weight: 900;
 
   &:hover {
-    @apply bg-purple text-yellow shadow-small-yellow border-yellow;
+    @apply bg-yellow text-pink;
   }
 }
 
 .button-inverse {
-  @apply bg-purple text-yellow shadow-small-yellow border-yellow;
+  @apply bg-yellow border-pink shadow-small-pink text-pink border-1;
 }
 
 main {
-  background-image: url('/blob-pink.svg');
-  background-repeat: no-repeat;
-  background-size: 85% auto;
-  min-height: 100vh;
-
   @screen lg {
-    background-image: url('/blob-purple.svg');
-    background-size: 50% auto;
     margin-top: 54px;
     margin-right: 54px;
   }
@@ -117,7 +110,7 @@ ol {
     list-style: decimal-leading-zero;
 
     &:before {
-      @apply text-yellow text-center absolute font-bold text-base bg-yellow rounded-full leading-none w-4 h-4 transform rotate-12;
+      @apply text-pink text-center absolute font-bold text-base bg-yellow rounded-full leading-none w-4 h-4 transform rotate-12;
       content: counter(ol-counter);
       left: -20px;
       top: 2px;
@@ -129,14 +122,14 @@ ul li {
   @apply text-black block list-none mb-1 ml-5 p-0 relative;
 
   &:before {
-    @apply inline-block text-yellow absolute top-0;
+    @apply inline-block text-pink absolute top-0;
     content: '\2022';
     left: -1.1225em;
     font-size: 1em;
   }
 
   &:nth-child(even)::before {
-    @apply text-purple;
+    @apply text-blue;
   }
 }
 
@@ -157,7 +150,7 @@ p {
 
   &:before,
   &:after {
-    @apply absolute inline-block left-0 border-purple border-solid;
+    @apply absolute inline-block left-0 border-pink border-solid;
     content: '';
   }
 
@@ -185,7 +178,7 @@ p {
 
 .ll-nam {
   /* words */
-  @apply text-purple font-bold;
+  @apply text-blue font-bold;
 }
 
 .ll-num {
@@ -223,22 +216,16 @@ p {
 .page-name {
   h1 {
     -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--purple);
+    -webkit-text-stroke-color: var(--pink);
     z-index: 2;
 
     @screen lg {
-      -webkit-text-stroke-color: var(--purple);
+      -webkit-text-stroke-color: var(--blue);
     }
   }
 
   span {
     z-index: 2;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: var(--purple);
-
-    @screen lg {
-      -webkit-text-stroke-color: var(--purple);
-    }
   }
 }
 

@@ -12,7 +12,7 @@
     <div class="m-4 xl:m-0 w-4/5">
       <div
         v-if="date && image"
-        class="lowercase text-yellow text-right font-medium"
+        class="lowercase text-yellow lg:text-pink text-right font-medium"
       >
         {{ date }}
       </div>
@@ -23,7 +23,7 @@
             'text-5xl': title.split(' ').length <= 1,
             'text-3xl': title.split(' ').length > 1,
           }"
-          class="block text-yellow relative"
+          class="block text-yellow lg:text-pink relative"
         >
           {{ title }}
         </h1>
@@ -31,7 +31,7 @@
 
       <div
         v-if="date && !image"
-        class="lowercase text-purple lg:text-yellow font-medium"
+        class="lowercase text-yellow lg:text-pink font-medium"
       >
         {{ date }}
       </div>
@@ -85,13 +85,13 @@ export default {
   }
 
   .circles {
-    @apply absolute z-0 w-48;
+    @apply fixed z-0 w-48;
     left: 20%;
     bottom: -20px;
   }
 
   .lines {
-    @apply absolute z-0 left-0;
+    @apply fixed z-0 left-0;
     width: 500px;
     top: 30px;
   }

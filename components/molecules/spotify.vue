@@ -4,20 +4,20 @@
       href="https://open.spotify.com/user/youareabsurd?si=LQ5wDByRTXuVxzsdvDVRsA"
       target="_blank"
       rel="noopener noreferrer"
-      class="text-purple border-purple border-b-1 font-bold"
+      class="text-blue border-blue border-b-1 mb-3 font-bold"
     >
       {{ texts.spotify[lang] }}
     </a>
     <div
       v-for="song in songs"
       :key="song.name"
-      class="flex flex-row items-center content-center mt-2"
+      class="flex flex-row items-center content-center mt-1"
     >
       <div v-for="img in song.image" :key="img.size">
         <img
           v-if="img.size === 'medium'"
           :src="img['#text']"
-          class="mr-2 rounded-full object-cover border-purple border-4 w-16 h-16"
+          class="mr-2 rounded-full object-cover border-blue border-4 w-16 h-16"
         />
       </div>
       <ul>

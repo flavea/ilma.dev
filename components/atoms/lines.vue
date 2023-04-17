@@ -26,7 +26,7 @@ export default {
 <style lang="scss">
 .lines {
   .l {
-    @apply bg-purple inline-block mx-2 h-24 transform rotate-45;
+    @apply bg-blue inline-block mx-2 h-24 transform rotate-45;
     width: 1px;
   }
 

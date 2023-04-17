@@ -3,11 +3,11 @@
     id="page-alternate"
     class="py-20 min-h-screen flex flex-col justify-center items-center"
   >
-    <div class="circles absolute bottom-0 left-0 z-0 hidden lg:block w-72">
+    <div class="circles fixed bottom-0 left-0 z-0 hidden lg:block">
       <div v-for="index in 126" :key="index" class="c" />
     </div>
     <div
-      class="circles circles-2 absolute hidden lg:block z-0 right-0 w-72"
+      class="circles circles-2 fixed hidden lg:block z-0 right-0"
       style="top: 30%"
     >
       <div v-for="index in 126" :key="index" class="c" />
@@ -21,13 +21,16 @@
 <style lang="scss" scoped>
 #page-alternate {
   margin: 0;
-  background-image: url('/wave-2.svg');
-  background-position: bottom;
-  background-repeat: no-repeat;
-  background-size: 110% auto;
+  background: url('https://res.cloudinary.com/ilma/image/upload/v1593808511/assets/blobby_fcnzmt.svg')
+      no-repeat,
+    var(--yellow);
+  background-blend-mode: normal, hue;
+  background-size: 100% auto;
+  background-position: -100px -150px, 0 60px, top;
+  background-attachment: fixed;
 
   @screen lg {
-    background-image: url('/wave-3.svg');
+    background: transparent;
   }
 }
 </style>

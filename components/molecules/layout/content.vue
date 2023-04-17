@@ -6,10 +6,10 @@
     >
       <div v-for="index in 30" :key="index" class="l" />
     </div>
-    <div class="p-6 bg-white rounded-lg m-4 lg:my-8 lg:mx-0 border-1 border-purple">
+    <div class="p-6 bg-white rounded-lg m-4 lg:my-8 lg:mx-0">
       <slot />
     </div>
-    <div v-if="disqus" class="p-6 bg-white rounded-lg m-4 lg:my-8 lg:mx-0 border-1 border-purple">
+    <div v-if="disqus" class="p-6 bg-white rounded-lg m-4 lg:my-8 lg:mx-0">
       <Disqus :identifier="disqus" :url="url" shortname="hellolittlered" />
     </div>
   </div>

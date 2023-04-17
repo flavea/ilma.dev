@@ -20,7 +20,7 @@
 
     <TextareaField v-if="categories.length" :label="texts.project[lang]">
       <div v-for="cat in categories" :key="cat.id">
-        <div class="checkbox text-purple font-bold mb-1">
+        <div class="checkbox text-pink font-bold mb-1">
           <input
             :id="'cb' + cat.id"
             v-model="commissionForm.Categories"

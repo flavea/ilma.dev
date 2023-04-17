@@ -26,7 +26,7 @@
         v-for="category in Post.Categories"
         :key="category._id"
         :to="`/blog/${category.Slug}`"
-        class="bg-purple text-pink py-2 px-4 mr-2 mt-2 inline-block font-bold text-sm rounded-full lowercase"
+        class="bg-blue text-pink py-2 px-4 mr-2 mt-2 inline-block font-bold text-sm rounded-full lowercase"
       >
         {{ category.Name }}
       </nuxt-link>
