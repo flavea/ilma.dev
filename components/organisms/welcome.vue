@@ -24,9 +24,6 @@
       </div>
     </div>
     <div id="content">
-      <Github
-        class="absolute top-0 right-0 hidden lg:block w-1/6 m-5 text-xs"
-      />
 
       <Circles
         class="circles-2 w-64 absolute hidden lg:block"
@@ -38,7 +35,7 @@
         class="lg:mt-40 text-pink lg:py-8"
       >
         <Spotify
-          class="hidden xxl:block w-1/2 xlg:w-1/3 m-5 text-xs mb-5"
+          class="absolute top-0 right-0 hidden lg:block w-1/6 m-5 text-xs"
         />
 
         <div id="inner-message" class="p-4 md:p-8 pt-0 relative mt-10 md:pb-0">
@@ -68,13 +65,12 @@
 import Squares from '@/components/atoms/squares.vue'
 import Circles from '@/components/atoms/circles.vue'
 import Lines from '@/components/atoms/lines.vue'
-import Github from '@/components/molecules/github.vue'
 import Spotify from '@/components/molecules/spotify.vue'
 import Releases from '@/components/molecules/home/releases.vue'
 import Posts from '@/components/molecules/home/posts.vue'
 
 export default {
-  components: { Circles, Lines, Spotify, Github, Releases, Posts, Squares },
+  components: { Circles, Lines, Spotify, Releases, Posts, Squares },
   props: {
     codes: {
       type: Array,
